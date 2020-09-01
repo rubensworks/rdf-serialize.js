@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "https://linkedsoftwaredependencies.org/bundles/npm/rdf-serialize/^1.0.0/components/context.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/bus-rdf-serialize/^1.0.0/components/context.jsonld"
+  ],
+  "@id": "npmd:rdf-serialize",
+  "components": [
+    {
+      "@id": "rs:RdfSerializer",
+      "@type": "Class",
+      "requireElement": "RdfSerializer",
+      "comment": "An RDF Serializer.",
+      "parameters": [
+        {
+          "@id": "rs:mediatorRdfSerializeMediatypes",
+          "comment": "The RDF Parse mediator for collecting media types",
+          "required": true,
+          "unique": true
+        },
+        {
+          "@id": "rs:mediatorRdfSerializeHandle",
+          "comment": "The RDF Parse mediator for handling serialization",
+          "required": true,
+          "unique": true
+        },
+        {
+          "@id": "rs:serializer",
+          "comment": "A serializer",
+          "required": true
+        }
+      ],
+      "constructorArguments": [
+        {
+          "@id": "rs:RdfSerializer/constructorArgumentsObject",
+          "fields": [
+            {
+              "keyRaw": "mediatorRdfSerializeMediatypes",
+              "value": "rs:mediatorRdfSerializeMediatypes"
+            },
+            {
+              "keyRaw": "mediatorRdfSerializeHandle",
+              "value": "rs:mediatorRdfSerializeHandle"
+            },
+            {
+              "keyRaw": "serializers",
+              "value": "rs:serializer"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

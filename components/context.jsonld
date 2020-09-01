@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^3.0.0/components/context.jsonld",
+    {
+      "npmd": "https://linkedsoftwaredependencies.org/bundles/npm/",
+      "rs": "npmd:rdf-serialize/",
+      "files-rs": "rs:^1.0.0/",
+      "config": "files-rs:config/config-default.json#",
+
+      "RdfSerializer": "rs:RdfSerializer",
+      "mediatorRdfSerializeMediatypes": "rs:mediatorRdfSerializeMediatypes",
+      "mediatorRdfSerializeHandle": "rs:mediatorRdfSerializeHandle",
+      "serializers": "rs:serializer"
+    }
+  ]
+}
