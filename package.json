@@ -1,6 +1,6 @@
 {
   "name": "rdf-serialize",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Serializes to any RDF serialization",
   "lsd:module": "https://linkedsoftwaredependencies.org/bundles/npm/rdf-serialize",
   "lsd:components": "components/components.jsonld",
