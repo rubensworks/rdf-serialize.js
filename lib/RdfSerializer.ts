@@ -9,7 +9,7 @@ import {
 } from '@comunica/actor-abstract-mediatyped';
 import { ActionContext, Actor, IActorTest, Mediator } from "@comunica/core";
 import * as RDF from "rdf-js";
-import { Readable } from "stream";
+import { PassThrough, Readable } from "stream";
 
 /**
  * An RdfSerializer can serialize to any RDF serialization, based on a given content type.
@@ -83,10 +83,7 @@ export class RdfSerializer<Q extends RDF.BaseQuad = RDF.Quad>  {
     }
 
     // Create a new readable
-    const readable = new Readable();
-    readable._read = () => {
-      return;
-    };
+    const readable = new PassThrough({ objectMode: true });
 
     // Delegate serializing to the mediator
     this.mediatorRdfSerializeHandle.mediate({
@@ -97,8 +94,7 @@ export class RdfSerializer<Q extends RDF.BaseQuad = RDF.Quad>  {
       .then((output) => {
         const data: NodeJS.ReadableStream = output.handle.data;
         data.on('error', (e) => readable.emit('error', e));
-        data.on('data', (chunk) => readable.push(chunk));
-        data.on('end', () => readable.push(null));
+        data.pipe(readable);
       })
       .catch((e) => readable.emit('error', e));
 
