@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.1.0"></a>
+## [v1.1.0](https://github.com/rubensworks/rdf-serialize.js/compare/v1.0.1...v1.1.0) - 2021-01-15
+
+### Changed
+* [Update to Comunica 1.19](https://github.com/rubensworks/rdf-serialize.js/commit/ee7004f92dacb8b9bc20b3a994cf3d37ae716a16)
+
 <a name="v1.0.1"></a>
 ## [v1.0.1](https://github.com/rubensworks/rdf-serialize.js/compare/v1.0.0...v1.0.1) - 2020-11-12
 
