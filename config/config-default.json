@@ -26,12 +26,12 @@
   },
   "serializers": [
     {
-      "@id": "config-sets:rdf-serializers.json#myRdfSerializerN3",
+      "@id": "config:myRdfSerializerN3",
       "@type": "ActorRdfSerializeN3",
       "priorityScale": 1.0
     },
     {
-      "@id": "config-sets:rdf-serializers.json#myRdfSerializerJsonLd",
+      "@id": "config:myRdfSerializerJsonLd",
       "@type": "ActorRdfSerializeJsonLd",
       "priorityScale": 0.9
     }
