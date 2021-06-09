@@ -18,7 +18,7 @@ The following RDF serializations are supported:
 | [Turtle](https://www.w3.org/TR/turtle/) | `text/turtle` | `.ttl`, `.turtle` |
 | [N-Triples](https://www.w3.org/TR/n-triples/) | `application/n-triples` | `.nt`, `.ntriples` |
 | [Notation3](https://www.w3.org/TeamSubmission/n3/) | `text/n3` | `.n3` |
-| [JSON-LD](https://json-ld.org/) | `application/ld+json`, `application/json` | `.json`, `.jsonld` |
+| [JSON-LD](https://json-ld.org/) | `application/ld+json` | `.jsonld` |
 
 Internally, this library makes use of RDF serializers from the [Comunica framework](https://github.com/comunica/comunica),
 which enable streaming processing of RDF.
