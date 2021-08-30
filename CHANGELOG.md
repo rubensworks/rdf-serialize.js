@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.2.0"></a>
+## [v1.2.0](https://github.com/rubensworks/rdf-serialize.js/compare/v1.1.0...v1.2.0) - 2021-08-30
+
+### Changed
+* [Migrate to @rdfjs/types](https://github.com/rubensworks/rdf-serialize.js/commit/35bf5db5a80e8bd1a8de5df5a954111a6c584f5c)
+
 <a name="v1.1.0"></a>
 ## [v1.1.0](https://github.com/rubensworks/rdf-serialize.js/compare/v1.0.1...v1.1.0) - 2021-01-15
 
