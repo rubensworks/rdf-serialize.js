@@ -8,7 +8,7 @@ import {
   IActorTestAbstractMediaTypedMediaTypes,
 } from '@comunica/actor-abstract-mediatyped';
 import { ActionContext, Actor, IActorTest, Mediator } from "@comunica/core";
-import * as RDF from "rdf-js";
+import * as RDF from "@rdfjs/types";
 import { PassThrough, Readable } from "stream";
 
 /**

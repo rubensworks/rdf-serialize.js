@@ -34,19 +34,19 @@
     "test"
   ],
   "devDependencies": {
-    "@comunica/runner": "^1.19.0",
-    "rdf-data-factory": "^1.0.1",
+    "@comunica/runner": "^1.22.0",
     "@types/jest": "^27.0.0",
-    "@types/n3": "^1.1.4",
+    "@types/n3": "^1.10.3",
     "arrayify-stream": "^1.0.0",
     "coveralls": "^3.0.0",
     "jest": "^27.0.0",
     "manual-git-changelog": "^1.0.1",
     "pre-commit": "^1.2.2",
+    "rdf-data-factory": "^1.1.0",
     "rdf-quad": "^1.3.0",
-    "rdf-test-suite": "^1.13.0",
-    "streamify-array": "^1.0.0",
+    "rdf-test-suite": "^1.18.0",
     "stream-to-string": "^1.1.0",
+    "streamify-array": "^1.0.0",
     "ts-jest": "^27.0.0",
     "tslint": "^6.0.0",
     "tslint-eslint-rules": "^5.3.1",
@@ -83,18 +83,15 @@
     "version": "manual-git-changelog onversion"
   },
   "dependencies": {
-    "@comunica/actor-rdf-serialize-jsonld": "~1.21.0",
-    "@comunica/actor-rdf-serialize-n3": "~1.21.0",
-    "@comunica/bus-init": "~1.21.0",
-    "@comunica/bus-rdf-serialize": "~1.21.0",
-    "@comunica/core": "~1.21.0",
-    "@comunica/mediator-combine-union": "~1.21.0",
-    "@comunica/mediator-number": "~1.21.0",
-    "@comunica/mediator-race": "~1.21.0",
-    "@types/rdf-js": "*",
+    "@comunica/actor-rdf-serialize-jsonld": "~1.22.0",
+    "@comunica/actor-rdf-serialize-n3": "~1.22.0",
+    "@comunica/bus-init": "~1.22.0",
+    "@comunica/bus-rdf-serialize": "~1.22.0",
+    "@comunica/core": "~1.22.0",
+    "@comunica/mediator-combine-union": "~1.22.0",
+    "@comunica/mediator-number": "~1.22.0",
+    "@comunica/mediator-race": "~1.22.0",
+    "@rdfjs/types": "*",
     "stream-to-string": "^1.2.0"
-  },
-  "resolutions": {
-    "@types/rdf-js": "^4.0.0"
   }
 }
