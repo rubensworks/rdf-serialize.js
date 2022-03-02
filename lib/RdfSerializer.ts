@@ -1,15 +1,10 @@
-import { IActionRdfSerialize, IActorRdfSerializeOutput } from "@comunica/bus-rdf-serialize";
-import {
-  IActionAbstractMediaTypedHandle,
-  IActionAbstractMediaTypedMediaTypes,
-  IActorOutputAbstractMediaTypedHandle,
-  IActorOutputAbstractMediaTypedMediaTypes,
-  IActorTestAbstractMediaTypedHandle,
-  IActorTestAbstractMediaTypedMediaTypes,
-} from '@comunica/actor-abstract-mediatyped';
-import { ActionContext, Actor, IActorTest, Mediator } from "@comunica/core";
+import { ActionContext, Actor } from "@comunica/core";
 import * as RDF from "@rdfjs/types";
-import { PassThrough, Readable } from "stream";
+import { PassThrough } from "stream";
+import {
+  MediatorRdfSerializeHandle,
+  MediatorRdfSerializeMediaTypes
+} from '@comunica/bus-rdf-serialize';
 
 /**
  * An RdfSerializer can serialize to any RDF serialization, based on a given content type.
@@ -30,16 +25,8 @@ export class RdfSerializer<Q extends RDF.BaseQuad = RDF.Quad>  {
     json     : "application/ld+json",
   };
 
-  public readonly mediatorRdfSerializeMediatypes: Mediator<Actor<
-    IActionAbstractMediaTypedMediaTypes, IActorTestAbstractMediaTypedMediaTypes,
-    IActorOutputAbstractMediaTypedMediaTypes>,
-    IActionAbstractMediaTypedMediaTypes, IActorTestAbstractMediaTypedMediaTypes,
-    IActorOutputAbstractMediaTypedMediaTypes>;
-  public readonly mediatorRdfSerializeHandle: Mediator<Actor<
-    IActionAbstractMediaTypedHandle<IActionRdfSerialize>, IActorTestAbstractMediaTypedHandle<IActorTest>,
-    IActorOutputAbstractMediaTypedHandle<IActorRdfSerializeOutput>>,
-    IActionAbstractMediaTypedHandle<IActionRdfSerialize>, IActorTestAbstractMediaTypedHandle<IActorTest>,
-    IActorOutputAbstractMediaTypedHandle<IActorRdfSerializeOutput>>;
+  public readonly mediatorRdfSerializeMediatypes: MediatorRdfSerializeMediaTypes;
+  public readonly mediatorRdfSerializeHandle: MediatorRdfSerializeHandle;
 
   constructor(args: IRdfSerializerArgs) {
     this.mediatorRdfSerializeMediatypes = args.mediatorRdfSerializeMediatypes;
@@ -58,9 +45,9 @@ export class RdfSerializer<Q extends RDF.BaseQuad = RDF.Quad>  {
    * Get a hash of all available content types for this serializer, mapped to a numerical priority.
    * @return {Promise<{[p: string]: number}>} A promise resolving to a hash mapping content type to a priority number.
    */
-  public async getContentTypesPrioritized(): Promise<{[contenType: string]: number}> {
+  public async getContentTypesPrioritized(): Promise<{[contentType: string]: number}> {
     return (await this.mediatorRdfSerializeMediatypes.mediate(
-      { context: ActionContext({}), mediaTypes: true })).mediaTypes;
+      { context: new ActionContext(), mediaTypes: true })).mediaTypes;
   }
 
   /**
@@ -86,9 +73,10 @@ export class RdfSerializer<Q extends RDF.BaseQuad = RDF.Quad>  {
     const readable = new PassThrough({ objectMode: true });
 
     // Delegate serializing to the mediator
+    const context = new ActionContext(options);
     this.mediatorRdfSerializeHandle.mediate({
-      context: ActionContext(options),
-      handle: { quadStream: stream },
+      context,
+      handle: { quadStream: stream, context },
       handleMediaType: contentType,
     })
       .then((output) => {
@@ -120,16 +108,9 @@ export class RdfSerializer<Q extends RDF.BaseQuad = RDF.Quad>  {
 }
 
 export interface IRdfSerializerArgs {
-  mediatorRdfSerializeMediatypes: Mediator<Actor<
-    IActionAbstractMediaTypedMediaTypes, IActorTestAbstractMediaTypedMediaTypes,
-    IActorOutputAbstractMediaTypedMediaTypes>,
-    IActionAbstractMediaTypedMediaTypes, IActorTestAbstractMediaTypedMediaTypes,
-    IActorOutputAbstractMediaTypedMediaTypes>;
-  mediatorRdfSerializeHandle: Mediator<Actor<
-    IActionAbstractMediaTypedHandle<IActionRdfSerialize>, IActorTestAbstractMediaTypedHandle<IActorTest>,
-    IActorOutputAbstractMediaTypedHandle<IActorRdfSerializeOutput>>,
-    IActionAbstractMediaTypedHandle<IActionRdfSerialize>, IActorTestAbstractMediaTypedHandle<IActorTest>,
-    IActorOutputAbstractMediaTypedHandle<IActorRdfSerializeOutput>>;
+  mediatorRdfSerializeMediatypes: MediatorRdfSerializeMediaTypes;
+  mediatorRdfSerializeHandle: MediatorRdfSerializeHandle;
+  actors: Actor<any, any, any>[];
 }
 
 export type SerializeOptions = {

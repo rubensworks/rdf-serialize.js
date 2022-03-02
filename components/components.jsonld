@@ -1,9 +1,0 @@
-{
-  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/rdf-serialize/^1.0.0/components/context.jsonld",
-  "@id": "npmd:rdf-serialize",
-  "@type": "Module",
-  "requireName": "./lib/RdfSerializer",
-  "import": [
-    "files-rs:components/RdfSerializer.jsonld"
-  ]
-}

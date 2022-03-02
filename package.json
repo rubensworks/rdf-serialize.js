@@ -10,8 +10,8 @@
     "rdfjs",
     "linked data"
   ],
-  "main": "index.js",
-  "typings": "index",
+  "main": "lib/index.js",
+  "typings": "lib/index",
   "repository": "git@github.com:rubensworks/rdf-serialize.js.git",
   "author": "Ruben Taelman <rubensworks@gmail.com>",
   "bugs": {
@@ -24,9 +24,7 @@
     "lib/**/*.js",
     "config",
     "components",
-    "engine-default.js",
-    "index.d.ts",
-    "index.js"
+    "engine-default.js"
   ],
   "pre-commit": [
     "build",
@@ -34,16 +32,18 @@
     "test"
   ],
   "devDependencies": {
-    "@comunica/runner": "^1.22.0",
+    "@comunica/runner": "^2.0.1",
     "@types/jest": "^27.0.0",
     "@types/n3": "^1.10.3",
     "arrayify-stream": "^1.0.0",
-    "coveralls": "^3.0.0",
+    "componentsjs-generator": "^3.0.0",
     "jest": "^27.0.0",
     "manual-git-changelog": "^1.0.1",
     "pre-commit": "^1.2.2",
     "rdf-data-factory": "^1.1.0",
     "rdf-quad": "^1.3.0",
+    "@comunica/actor-http-native": "^2.0.1",
+    "rdf-parse": "^2.0.0",
     "rdf-test-suite": "^1.18.0",
     "stream-to-string": "^1.1.0",
     "streamify-array": "^1.0.0",
@@ -75,22 +75,24 @@
   "scripts": {
     "test": "jest ${1} --forceExit",
     "test-watch": "jest ${1} --watch",
-    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "lint": "tslint index.ts lib/**/*.ts test/**/*.ts --exclude '**/*.d.ts'",
-    "build": "tsc",
+    "lint": "tslint lib/index.ts lib/**/*.ts test/**/*.ts --exclude '**/*.d.ts'",
+    "build": "npm run build:ts && npm run build:components",
+    "build:ts": "tsc",
+    "build:components": "componentsjs-generator",
     "validate": "npm ls",
-    "prepare": "npm run build && comunica-compile-config config/config-default.json urn:comunica:my > engine-default.js",
+    "prepare": "npm run build && comunica-compile-config config/config-default.json urn:comunica:default:Runner > engine-default.js",
     "version": "manual-git-changelog onversion"
   },
   "dependencies": {
-    "@comunica/actor-rdf-serialize-jsonld": "~1.22.0",
-    "@comunica/actor-rdf-serialize-n3": "~1.22.0",
-    "@comunica/bus-init": "~1.22.0",
-    "@comunica/bus-rdf-serialize": "~1.22.0",
-    "@comunica/core": "~1.22.0",
-    "@comunica/mediator-combine-union": "~1.22.0",
-    "@comunica/mediator-number": "~1.22.0",
-    "@comunica/mediator-race": "~1.22.0",
+    "@comunica/actor-rdf-serialize-jsonld": "^2.0.1",
+    "@comunica/actor-rdf-serialize-n3": "^2.0.1",
+    "@comunica/bus-init": "^2.0.1",
+    "@comunica/bus-rdf-serialize": "^2.0.1",
+    "@comunica/config-query-sparql": "^2.0.1",
+    "@comunica/core": "^2.0.1",
+    "@comunica/mediator-combine-pipeline": "^2.0.1",
+    "@comunica/mediator-combine-union": "^2.0.1",
+    "@comunica/mediator-race": "^2.0.1",
     "@rdfjs/types": "*",
     "stream-to-string": "^1.2.0"
   }

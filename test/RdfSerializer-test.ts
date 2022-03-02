@@ -11,24 +11,24 @@ describe('serializer', () => {
   });
 
   it('should get all content types', async () => {
-    expect(await serializer.getContentTypes()).toEqual([
+    expect((await serializer.getContentTypes()).sort()).toEqual([
       "application/ld+json",
       "application/trig",
       "application/n-quads",
       "text/turtle",
       "application/n-triples",
       "text/n3"
-    ]);
+    ].sort());
   });
 
   it('should get all prioritized content types', async () => {
     expect(await serializer.getContentTypesPrioritized()).toEqual({
+      "application/n-quads": 1,
+      "application/trig": 0.95,
       "application/ld+json": 0.9,
-      "application/n-quads": 0.7,
-      "application/n-triples": 0.3,
-      "application/trig": 1,
-      "text/n3": 0.2,
-      "text/turtle": 0.6
+      "application/n-triples": 0.8,
+      "text/turtle": 0.6,
+      "text/n3": 0.35
     });
   });
 
