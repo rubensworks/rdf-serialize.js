@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v2.0.0"></a>
+## [v2.0.0](https://github.com/rubensworks/rdf-serialize.js/compare/v1.1.0...v2.0.0) - 2022-03-02
+
+Even though this is a major update, there are no breaking changes for most end-users. Only the internal configuration files have breaking changes, which may require manual attention for users that reconfigure this package via config files.
+
+### Changed
+* [Update to Comunica 2](https://github.com/rubensworks/rdf-serialize.js/commit/2f410bb739c2df72adb6560d1edc48bf501f8ae1)
+
 <a name="v1.2.0"></a>
 ## [v1.2.0](https://github.com/rubensworks/rdf-serialize.js/compare/v1.1.0...v1.2.0) - 2021-08-30
 
