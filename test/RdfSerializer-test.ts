@@ -89,6 +89,30 @@ describe('serializer', () => {
 
   it('should serialize application/ld+json by path', () => {
     const stream = streamifyArray([
+      quad('http://ex.org/s', 'http://ex.org/p', 'http://ex.org/o1'),
+      quad('http://ex.org/s', 'http://ex.org/p', 'http://ex.org/o2'),
+    ]);
+    return expect(stringifyStream(serializer
+      .serialize(stream, { path: 'myfile.json' })))
+      .resolves.toEqual(`[
+  {
+    "@id": "http://ex.org/s",
+    "http://ex.org/p": [
+      {
+        "@id": "http://ex.org/o1"
+      }
+      ,
+      {
+        "@id": "http://ex.org/o2"
+      }
+    ]
+  }
+]
+`);
+  });
+
+  it('should serialize text/shaclc by path', () => {
+    const stream = streamifyArray([
       quad("http://localhost:3002/ContactsShape#ContactsShape", "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", "http://www.w3.org/ns/shacl#NodeShape"),
       quad("http://localhost:3002/ContactsShape", "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", "http://www.w3.org/2002/07/owl#Ontology"),
     ]);
