@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v2.1.0"></a>
+## [v2.1.0](https://github.com/rubensworks/rdf-serialize.js/compare/v2.0.1...v2.1.0) - 2023-01-31
+
+### Added
+* [Add shaclc support](https://github.com/rubensworks/rdf-serialize.js/commit/ffa92ffa7ec059401efb8db0ab1ac7fce762a64c)
+
 <a name="v2.0.1"></a>
 ## [v2.0.1](https://github.com/rubensworks/rdf-serialize.js/compare/v2.0.0...v2.0.1) - 2022-11-09
 
