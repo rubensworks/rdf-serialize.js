@@ -19,6 +19,8 @@ The following RDF serializations are supported:
 | [N-Triples](https://www.w3.org/TR/n-triples/) | `application/n-triples` | `.nt`, `.ntriples` |
 | [Notation3](https://www.w3.org/TeamSubmission/n3/) | `text/n3` | `.n3` |
 | [JSON-LD](https://json-ld.org/) | `application/ld+json` | `.jsonld` |
+| [SHACL Compact Syntax](https://w3c.github.io/shacl/shacl-compact-syntax/) | `text/shaclc` | `.shaclc`, `.shc` |
+| [Extended SHACL Compact Syntax](https://github.com/jeswr/shaclcjs#extended-shacl-compact-syntax) | `text/shaclc-ext` | `.shaclce`, `.shce` |
 
 Internally, this library makes use of RDF serializers from the [Comunica framework](https://github.com/comunica/comunica),
 which enable streaming processing of RDF.
@@ -27,6 +29,7 @@ Internally, the following fully spec-compliant serializers are used:
 
 * [N3.js](https://github.com/rdfjs/n3.js)
 * [jsonld-streaming-serializer.js](https://github.com/rubensworks/jsonld-streaming-serializer.js)
+* [shaclc-writer](https://github.com/jeswr/shaclc-writer/)
 
 ## Installation
 
