@@ -17,7 +17,9 @@ describe('serializer', () => {
       "application/n-quads",
       "text/turtle",
       "application/n-triples",
-      "text/n3"
+      "text/n3",
+      "text/shaclc",
+      "text/shaclc-ext"
     ].sort());
   });
 
@@ -28,7 +30,9 @@ describe('serializer', () => {
       "application/ld+json": 0.9,
       "application/n-triples": 0.8,
       "text/turtle": 0.6,
-      "text/n3": 0.35
+      "text/n3": 0.35,
+      "text/shaclc": 0.1,
+      "text/shaclc-ext": 0.05
     });
   });
 
@@ -85,25 +89,11 @@ describe('serializer', () => {
 
   it('should serialize application/ld+json by path', () => {
     const stream = streamifyArray([
-      quad('http://ex.org/s', 'http://ex.org/p', 'http://ex.org/o1'),
-      quad('http://ex.org/s', 'http://ex.org/p', 'http://ex.org/o2'),
+      quad("http://localhost:3002/ContactsShape#ContactsShape", "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", "http://www.w3.org/ns/shacl#NodeShape"),
+      quad("http://localhost:3002/ContactsShape", "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", "http://www.w3.org/2002/07/owl#Ontology"),
     ]);
     return expect(stringifyStream(serializer
-      .serialize(stream, { path: 'myfile.json' })))
-      .resolves.toEqual(`[
-  {
-    "@id": "http://ex.org/s",
-    "http://ex.org/p": [
-      {
-        "@id": "http://ex.org/o1"
-      }
-      ,
-      {
-        "@id": "http://ex.org/o2"
-      }
-    ]
-  }
-]
-`);
+      .serialize(stream, { path: 'myfile.shaclc' })))
+      .resolves.toEqual('BASE <http://localhost:3002/ContactsShape>\n\nshape <http://localhost:3002/ContactsShape#ContactsShape> {\n}\n');
   });
 });
