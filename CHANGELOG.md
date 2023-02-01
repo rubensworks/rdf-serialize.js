@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v2.2.0"></a>
+## [v2.2.0](https://github.com/rubensworks/rdf-serialize.js/compare/v2.1.0...v2.2.0) - 2023-02-01
+
+### Added
+* [Expose `CONTENT_MAPPINGS` and `getContentTypeFromExtension` (#14)](https://github.com/rubensworks/rdf-serialize.js/commit/5c1994344deb5d1b2276c5e6527eb21dce801c00)
+
 <a name="v2.1.0"></a>
 ## [v2.1.0](https://github.com/rubensworks/rdf-serialize.js/compare/v2.0.1...v2.1.0) - 2023-01-31
 
