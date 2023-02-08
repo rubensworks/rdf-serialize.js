@@ -555,27 +555,23 @@
     "@comunica/core" "^2.0.1"
     rdfa-streaming-parser "^1.5.0"
 
-"@comunica/actor-rdf-serialize-jsonld@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-serialize-jsonld/-/actor-rdf-serialize-jsonld-2.0.1.tgz#7d5f480c3dc10cf258332d914aa119699c8d9140"
-  integrity sha512-5tLbl7+T96Y2LaUNgDQbxEJiMmDuE3gckBNnXi0nkVcEKtuPSvFoj3aRbMyA3qhVC0lxHeDAjm3DFk+IOFhmJw==
+"@comunica/actor-rdf-serialize-jsonld@^2.6.6":
+  version "2.6.6"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-serialize-jsonld/-/actor-rdf-serialize-jsonld-2.6.6.tgz#367d583cb9e51fb4205e55cbc63808d21d82125a"
+  integrity sha512-CPwmXj1HsdL+vYlBuQ3wI6Ozw+IKfN0Fq7T4N+Ch01GVxN55rLb31JaPjE2rs4OxXD33gf57YE6Z0UTuGvwh/g==
   dependencies:
-    "@comunica/actor-abstract-mediatyped" "^2.0.1"
-    "@comunica/bus-rdf-serialize" "^2.0.1"
-    "@comunica/core" "^2.0.1"
-    jsonld-streaming-serializer "^1.3.0"
+    "@comunica/bus-rdf-serialize" "^2.6.0"
+    "@comunica/types" "^2.6.0"
+    jsonld-streaming-serializer "^2.0.1"
 
-"@comunica/actor-rdf-serialize-n3@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-serialize-n3/-/actor-rdf-serialize-n3-2.0.1.tgz#caeaf9311b965ae04d63367193d696c68bbf7fd5"
-  integrity sha512-2pqjG8gV6T6N6kgu7kBAep6kQU6sTPu/RQLHyPmrTiPzMiPwjO6OmifTNTbOI6LUFefCO7nVDNVDJD+3nvypgA==
+"@comunica/actor-rdf-serialize-n3@^2.6.6":
+  version "2.6.6"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-serialize-n3/-/actor-rdf-serialize-n3-2.6.6.tgz#4c42fffc70f1d8f6b70059fcb46b8801db78ef6a"
+  integrity sha512-K9LYDPzqX38yXb4TImQlwXyx+KjR0F5fyGEiRfRK1MCGhVmATBl/VECvWkYNG7oNh2Li4HAM5g3b6u3VsCCczw==
   dependencies:
-    "@comunica/bus-rdf-serialize" "^2.0.1"
-    "@comunica/core" "^2.0.1"
-    "@rdfjs/types" "*"
-    "@types/n3" "^1.4.4"
-    n3 "^1.6.3"
-    rdf-string "^1.5.0"
+    "@comunica/bus-rdf-serialize" "^2.6.0"
+    "@comunica/types" "^2.6.0"
+    n3 "^1.16.3"
 
 "@comunica/actor-rdf-serialize-shaclc@^2.6.0":
   version "2.6.0"
@@ -1209,6 +1205,14 @@
   dependencies:
     "@types/node" "*"
     safe-buffer "*"
+
+"@types/readable-stream@^2.3.13":
+  version "2.3.15"
+  resolved "https://registry.yarnpkg.com/@types/readable-stream/-/readable-stream-2.3.15.tgz#3d79c9ceb1b6a57d5f6e6976f489b9b5384321ae"
+  integrity sha512-oM5JSKQCcICF1wvGgmecmHldZ48OZamtMxcGGVICOJA8o8cahXC1zEVAif8iwoc5j8etxFaRFnf095+CDsuoFQ==
+  dependencies:
+    "@types/node" "*"
+    safe-buffer "~5.1.1"
 
 "@types/sax@^1.0.1":
   version "1.2.4"
@@ -2881,13 +2885,16 @@ jsonld-streaming-parser@^2.4.0, jsonld-streaming-parser@^2.4.2:
     jsonparse "^1.3.1"
     rdf-data-factory "^1.1.0"
 
-jsonld-streaming-serializer@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/jsonld-streaming-serializer/-/jsonld-streaming-serializer-1.3.0.tgz#e42ec6ffefc5b80cc1bd17e8eee7943242f17a4d"
-  integrity sha512-QGflpxpwmr659ExvAQ5TFAY9BmJQiL/yF/MDRrP5oVWHcBBLhbPjUqDv//y2OvJxUY3UQYMXulTwzmYb1ttv2Q==
+jsonld-streaming-serializer@^2.0.1:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/jsonld-streaming-serializer/-/jsonld-streaming-serializer-2.1.0.tgz#db80d6e13d74ae5837a313123ea4d409b04df2e0"
+  integrity sha512-COHdLoeMTnrqHMoFhN3PoAwqnrKrpPC7/ACb0WbELYvt+HSOIFN3v4IJP7fOtLNQ4GeaeYkvbeWJ7Jo4EjxMDw==
   dependencies:
     "@rdfjs/types" "*"
+    "@types/readable-stream" "^2.3.13"
+    buffer "^6.0.3"
     jsonld-context-parser "^2.0.0"
+    readable-stream "^4.0.0"
 
 jsonparse@^1.2.0, jsonparse@^1.3.1:
   version "1.3.1"

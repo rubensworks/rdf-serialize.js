@@ -84,8 +84,8 @@
     "version": "manual-git-changelog onversion"
   },
   "dependencies": {
-    "@comunica/actor-rdf-serialize-jsonld": "^2.0.1",
-    "@comunica/actor-rdf-serialize-n3": "^2.0.1",
+    "@comunica/actor-rdf-serialize-jsonld": "^2.6.6",
+    "@comunica/actor-rdf-serialize-n3": "^2.6.6",
     "@comunica/actor-rdf-serialize-shaclc": "^2.6.0",
     "@comunica/bus-init": "^2.0.1",
     "@comunica/bus-rdf-serialize": "^2.0.1",
