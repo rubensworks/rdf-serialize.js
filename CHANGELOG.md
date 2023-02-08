@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v2.2.1"></a>
+## [v2.2.1](https://github.com/rubensworks/rdf-serialize.js/compare/v2.2.0...v2.2.1) - 2023-02-08
+
+### Fixed
+* [Update to Comunica 2.6.6 with backpressure fix](https://github.com/rubensworks/rdf-serialize.js/commit/3129681837eb149ec7dfe30796b5e319cd237fea)
+
 <a name="v2.2.0"></a>
 ## [v2.2.0](https://github.com/rubensworks/rdf-serialize.js/compare/v2.1.0...v2.2.0) - 2023-02-01
 
