@@ -1,6 +1,6 @@
 import { ActionContext, Actor } from "@comunica/core";
 import * as RDF from "@rdfjs/types";
-import { PassThrough } from "stream";
+import { PassThrough } from "readable-stream";
 import {
   MediatorRdfSerializeHandle,
   MediatorRdfSerializeMediaTypes
