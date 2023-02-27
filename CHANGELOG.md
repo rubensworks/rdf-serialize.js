@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v2.2.2"></a>
+## [v2.2.2](https://github.com/rubensworks/rdf-serialize.js/compare/v2.2.1...v2.2.2) - 2023-02-27
+
+### Fixed
+* [Use readable-stream instead of Node streams](https://github.com/rubensworks/rdf-serialize.js/commit/e21f51642c6881a73fce9c1f4c86aee2fcbe7ae2)
+
 <a name="v2.2.1"></a>
 ## [v2.2.1](https://github.com/rubensworks/rdf-serialize.js/compare/v2.2.0...v2.2.1) - 2023-02-08
 
