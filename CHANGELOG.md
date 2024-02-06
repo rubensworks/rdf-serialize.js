@@ -1,6 +1,15 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v2.2.3"></a>
+## [v2.2.3](https://github.com/rubensworks/rdf-serialize.js/compare/v2.2.2...v2.2.3) - 2024-02-06
+
+### Changed
+* [Update Comunica monorepo packages](https://github.com/rubensworks/rdf-serialize.js/commit/e3715792156206a9f73654208f6f88dc1c2cfb6e)
+
+### Fixed
+* [Fix Quad type import in index.d.ts](https://github.com/rubensworks/rdf-serialize.js/commit/63cd8dbc8587e78de094ba9419f1ebdda9865368)
+
 <a name="v2.2.2"></a>
 ## [v2.2.2](https://github.com/rubensworks/rdf-serialize.js/compare/v2.2.1...v2.2.2) - 2023-02-27
 

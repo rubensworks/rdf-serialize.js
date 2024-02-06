@@ -1,6 +1,6 @@
 {
   "name": "rdf-serialize",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "Serializes to any RDF serialization",
   "lsd:module": true,
   "keywords": [
