@@ -48,13 +48,13 @@ This package also works out-of-the-box in browsers via tools such as [webpack](h
 ## Require
 
 ```typescript
-import rdfSerializer from "rdf-serialize";
+import  { rdfSerializer } from "rdf-serialize";
 ```
 
 _or_
 
 ```javascript
-const rdfSerializer = require("rdf-serialize").default;
+const { rdfSerializer } = require("rdf-serialize");
 ```
 
 ## Usage
