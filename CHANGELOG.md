@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v3.0.0"></a>
+## [v3.0.0](https://github.com/rubensworks/rdf-serialize.js/compare/v2.2.3...v3.0.0) - 2024-07-04
+
+### BREAKING CHANGES
+* [Replace default exports with named exports for better ESM support (#22)](https://github.com/rubensworks/rdf-serialize.js/commit/1099ba97ce6ab82f8726be66016e614ed6533483)
+  * Update your imports to `import  { rdfSerializer } from "rdf-serialize";`
+
 <a name="v2.2.3"></a>
 ## [v2.2.3](https://github.com/rubensworks/rdf-serialize.js/compare/v2.2.2...v2.2.3) - 2024-02-06
 
