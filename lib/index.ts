@@ -2,5 +2,6 @@ import {RdfSerializer} from './RdfSerializer';
 
 export * from "./RdfSerializer";
 // tslint:disable:no-var-requires
-const rdfSerializer = <RdfSerializer>require('../engine-default');
+const rdfSerializerFactory = require('../engine-default');
+const rdfSerializer = <RdfSerializer>(typeof rdfSerializerFactory === 'function' ? rdfSerializerFactory() : undefined);
 export {rdfSerializer};
