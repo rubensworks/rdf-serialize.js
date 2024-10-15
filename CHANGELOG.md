@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v4.0.1"></a>
+## [v4.0.1](https://github.com/rubensworks/rdf-serialize.js/compare/v4.0.0...v4.0.1) - 2024-10-15
+
+### Fixed
+* [Fix missing config change](https://github.com/rubensworks/rdf-serialize.js/commit/2009b3df57996354fa0797e5b02fa8ef7efbab3d)
+
 <a name="v4.0.0"></a>
 ## [v4.0.0](https://github.com/rubensworks/rdf-serialize.js/compare/v3.0.0...v4.0.0) - 2024-10-15
 
