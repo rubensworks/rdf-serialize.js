@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v4.0.0"></a>
+## [v4.0.0](https://github.com/rubensworks/rdf-serialize.js/compare/v3.0.0...v4.0.0) - 2024-10-15
+
+### BREAKING CHANGES
+* [Bump to Comunica v4](https://github.com/rubensworks/rdf-serialize.js/commit/dc557ca1cfa5a38a02ab8d2b292d3ca9bf42008f)
+  * Besides performance improvements, this increases the minimum requires Node.js version to 18.
+
 <a name="v3.0.0"></a>
 ## [v3.0.0](https://github.com/rubensworks/rdf-serialize.js/compare/v2.2.3...v3.0.0) - 2024-07-04
 
