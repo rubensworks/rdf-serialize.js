@@ -46,7 +46,7 @@
     "manual-git-changelog": "^1.0.1",
     "pre-commit": "^1.2.2",
     "rdf-data-factory": "^1.1.0",
-    "rdf-parse": "^3.0.0",
+    "rdf-parse": "^4.0.0",
     "rdf-quad": "^1.3.0",
     "rdf-test-suite": "^1.18.0",
     "stream-to-string": "^1.1.0",
