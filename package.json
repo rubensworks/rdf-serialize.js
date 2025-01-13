@@ -48,7 +48,7 @@
     "rdf-data-factory": "^2.0.0",
     "rdf-parse": "^4.0.0",
     "rdf-quad": "^2.0.0",
-    "rdf-test-suite": "^1.18.0",
+    "rdf-test-suite": "^2.0.0",
     "stream-to-string": "^1.1.0",
     "streamify-array": "^1.0.0",
     "ts-jest": "^29.0.0",
