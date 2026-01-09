@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v5.0.0"></a>
+## [v5.0.0](https://github.com/rubensworks/rdf-serialize.js/compare/v4.0.1...v5.0.0) - 2026-01-09
+
+### BREAKING CHANGE
+* [Update to Comunica v5 with RDF 1.2 support](https://github.com/rubensworks/rdf-serialize.js/commit/f1c800265f09bc0c754d15dd76b359438bd8bdde)
+    This adds RDF 1.2 support, and removes RDF-star support.
+    The minimum Node.js version is now 20.
+
 <a name="v4.0.1"></a>
 ## [v4.0.1](https://github.com/rubensworks/rdf-serialize.js/compare/v4.0.0...v4.0.1) - 2024-10-15
 
