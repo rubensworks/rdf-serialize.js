@@ -58,9 +58,10 @@ describe('serializer', () => {
     const stream = streamifyArray([
       quad('http://ex.org/s', 'http://ex.org/p', 'http://ex.org/o1'),
       quad('http://ex.org/s', 'http://ex.org/p', 'http://ex.org/o2'),
+      quad('http://ex.org/s', 'http://ex.org/p', '<<http://ex.org/a http://ex.org/b http://ex.org/c>>'),
     ]);
     return expect(stringifyStream(rdfSerializer.serialize(stream, {contentType: 'text/turtle'})))
-      .resolves.toEqual(`<http://ex.org/s> <http://ex.org/p> <http://ex.org/o1>, <http://ex.org/o2>.
+      .resolves.toEqual(`<http://ex.org/s> <http://ex.org/p> <http://ex.org/o1>, <http://ex.org/o2>, <<(<http://ex.org/a> <http://ex.org/b> <http://ex.org/c>)>>.
 `);
   });
 

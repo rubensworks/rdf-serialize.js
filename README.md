@@ -11,16 +11,16 @@ and you want to _serialize_ them to a certain RDF serialization.
 
 The following RDF serializations are supported:
 
-| **Name** | **Content type** | **Extensions** |
-| -------- | ---------------- | ------------- |
-| [TriG](https://www.w3.org/TR/trig/) | `application/trig` | `.trig` |
-| [N-Quads](https://www.w3.org/TR/n-quads/) | `application/n-quads` | `.nq`, `.nquads` |
-| [Turtle](https://www.w3.org/TR/turtle/) | `text/turtle` | `.ttl`, `.turtle` |
-| [N-Triples](https://www.w3.org/TR/n-triples/) | `application/n-triples` | `.nt`, `.ntriples` |
-| [Notation3](https://www.w3.org/TeamSubmission/n3/) | `text/n3` | `.n3` |
-| [JSON-LD](https://json-ld.org/) | `application/ld+json` | `.jsonld` |
-| [SHACL Compact Syntax](https://w3c.github.io/shacl/shacl-compact-syntax/) | `text/shaclc` | `.shaclc`, `.shc` |
-| [Extended SHACL Compact Syntax](https://github.com/jeswr/shaclcjs#extended-shacl-compact-syntax) | `text/shaclc-ext` | `.shaclce`, `.shce` |
+| **Name**                                                                                                                                                                                 | **Content type** | **Extensions** |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ---------------- | ------------- |
+| [TriG 1.2](https://www.w3.org/TR/rdf12-trig/)                                                                                                                                            | `application/trig` | `.trig` |
+| [N-Quads 1.2](https://www.w3.org/TR/rdf12-n-quads/)                                                                                                                                            | `application/n-quads` | `.nq`, `.nquads` |
+| [Turtle 1.2](https://www.w3.org/TR/rdf12-turtle/)                                                                                                                                              | `text/turtle` | `.ttl`, `.turtle` |
+| [N-Triples 1.2](https://www.w3.org/TR/rdf12-n-triples/)                                                                                                                                        | `application/n-triples` | `.nt`, `.ntriples` |
+| [Notation3](https://www.w3.org/TeamSubmission/n3/)                                                                                                                                       | `text/n3` | `.n3` |
+| [JSON-LD 1.1](https://json-ld.org/)                                                                                                                                                      | `application/ld+json`, `application/json` | `.json`, `.jsonld` |
+| [SHACL Compact Syntax](https://w3c.github.io/shacl/shacl-compact-syntax/)                                                                                                                | `text/shaclc` | `.shaclc`, `.shc` |
+| [Extended SHACL Compact Syntax](https://github.com/jeswr/shaclcjs#extended-shacl-compact-syntax)                                                                                         | `text/shaclc-ext` | `.shaclce`, `.shce` |
 
 Internally, this library makes use of RDF serializers from the [Comunica framework](https://github.com/comunica/comunica),
 which enable streaming processing of RDF.

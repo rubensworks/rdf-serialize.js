@@ -1,11 +1,11 @@
 {
   "@context": [
-    "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/config-query-sparql/^4.0.0/components/context.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/config-query-sparql/^5.0.0/components/context.jsonld",
     "https://linkedsoftwaredependencies.org/bundles/npm/rdf-serialize/^4.0.0/components/context.jsonld",
 
-    "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/actor-rdf-serialize-n3/^4.0.0/components/context.jsonld",
-    "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/actor-rdf-serialize-jsonld/^4.0.0/components/context.jsonld",
-    "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/actor-rdf-serialize-shaclc/^4.0.0/components/context.jsonld"
+    "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/actor-rdf-serialize-n3/^5.0.0/components/context.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/actor-rdf-serialize-jsonld/^5.0.0/components/context.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/actor-rdf-serialize-shaclc/^5.0.0/components/context.jsonld"
   ],
   "import": [
     "ccqs:config/rdf-serialize/mediators.json"
