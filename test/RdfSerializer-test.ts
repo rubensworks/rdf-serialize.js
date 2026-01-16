@@ -65,6 +65,19 @@ describe('serializer', () => {
 `);
   });
 
+  it('should serialize text/turtle with prefixes', () => {
+    const stream = streamifyArray([
+      quad('http://ex.org/s', 'http://ex.org/p', 'http://ex.org/o1'),
+      quad('http://ex.org/s', 'http://ex.org/p', 'http://ex.org/o2'),
+      quad('http://ex.org/s', 'http://ex.org/p', '<<http://ex.org/a http://ex.org/b http://ex.org/c>>'),
+    ]);
+    return expect(stringifyStream(rdfSerializer.serialize(stream, {contentType: 'text/turtle', prefixes: { ex: 'http://ex.org/' }})))
+        .resolves.toEqual(`@prefix ex: <http://ex.org/>.
+
+ex:s ex:p ex:o1, ex:o2, <<(ex:a ex:b ex:c)>>.
+`);
+  });
+
   it('should serialize application/ld+json', () => {
     const stream = streamifyArray([
       quad('http://ex.org/s', 'http://ex.org/p', 'http://ex.org/o1'),

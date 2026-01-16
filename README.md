@@ -85,6 +85,12 @@ textStream.pipe(process.stdout)
 console.log(await stringifyStream(textStream));
 ```
 
+You may optionally pass prefixes to the serializer:
+
+```javascript
+rdfSerializer.serialize(quadStream, { contentType: 'text/turtle', prefixes: { ex: 'http://ex.org/' } });
+```
+
 ### Serializing for file name
 
 Sometimes, you know the desired path/URL of the serialized RDF document, but not the content type.

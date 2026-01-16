@@ -5,6 +5,7 @@ import {
   MediatorRdfSerializeHandle,
   MediatorRdfSerializeMediaTypes
 } from '@comunica/bus-rdf-serialize';
+import { KeysRdfSerialize } from '@comunica/context-entries';
 
 /**
  * An RdfSerializer can serialize to any RDF serialization, based on a given content type.
@@ -77,7 +78,8 @@ export class RdfSerializer<Q extends RDF.BaseQuad = RDF.Quad>  {
     const readable = new PassThrough({ objectMode: true });
 
     // Delegate serializing to the mediator
-    const context = new ActionContext(options);
+    const context = new ActionContext(options)
+        .setDefault(KeysRdfSerialize.rdfSerializationPrefixes, options.prefixes);
     this.mediatorRdfSerializeHandle.mediate({
       context,
       handle: { quadStream: stream, context },
@@ -117,7 +119,7 @@ export interface IRdfSerializerArgs {
   actors: Actor<any, any, any>[];
 }
 
-export type SerializeOptions = {
+export type SerializeOptions = ({
   /**
    * The content type of the needed serialization.
    */
@@ -127,4 +129,11 @@ export type SerializeOptions = {
    * The file name or URL that will be serialized to.
    */
   path: string;
-};
+}) & SerializeOptionsCommon;
+
+export type SerializeOptionsCommon = {
+  /**
+   * A record of prefixes to use during serialization.
+   */
+  prefixes?: Record<string, string>;
+}
