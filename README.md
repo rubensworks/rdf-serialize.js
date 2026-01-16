@@ -65,7 +65,7 @@ The `rdfSerializer.serialize` method takes in an [RDFJS stream](http://rdf.js.or
 and an options object, and outputs  text stream containing RDF in a certain serialization.
 
 ```javascript
-const streamifyArray = require('streamify-array');
+const { streamifyArray } = require('streamify-array');
 const stringifyStream = require('stream-to-string');
 const quad = require('rdf-quad');
 
