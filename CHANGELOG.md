@@ -1,6 +1,15 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v5.1.0"></a>
+## [v5.1.0](https://github.com/rubensworks/rdf-serialize.js/compare/v5.0.0...v5.1.0) - 2026-01-16
+
+### Added
+* [Allow prefixes to be passed, Closes #1](https://github.com/rubensworks/rdf-serialize.js/commit/32fd2dfcca95f106048c9bcb8f470246584c02d5)
+
+### Changed
+* [Update streamifyArray example in README, Closes #27](https://github.com/rubensworks/rdf-serialize.js/commit/9914438d3612bcd6a746bec05bb6062473ff20bf)
+
 <a name="v5.0.0"></a>
 ## [v5.0.0](https://github.com/rubensworks/rdf-serialize.js/compare/v4.0.1...v5.0.0) - 2026-01-09
 
