@@ -1,39 +1,39 @@
-import { ActionContext, Actor } from "@comunica/core";
-import * as RDF from "@rdfjs/types";
-import { PassThrough } from "readable-stream";
-import {
+import type {
   MediatorRdfSerializeHandle,
-  MediatorRdfSerializeMediaTypes
+  MediatorRdfSerializeMediaTypes,
 } from '@comunica/bus-rdf-serialize';
 import { KeysRdfSerialize } from '@comunica/context-entries';
+import type { Actor } from '@comunica/core';
+import { ActionContext } from '@comunica/core';
+import type * as RDF from '@rdfjs/types';
+import { PassThrough } from 'readable-stream';
 
 /**
  * An RdfSerializer can serialize to any RDF serialization, based on a given content type.
  */
-export class RdfSerializer<Q extends RDF.BaseQuad = RDF.Quad>  {
-
-  // tslint:disable:object-literal-sort-keys
-  public static readonly CONTENT_MAPPINGS: { [id: string]: string } = {
-    ttl      : "text/turtle",
-    turtle   : "text/turtle",
-    nt       : "application/n-triples",
-    ntriples : "application/n-triples",
-    nq       : "application/n-quads",
-    nquads   : "application/n-quads",
-    n3       : "text/n3",
-    shc      : "text/shaclc",
-    shaclc   : "text/shaclc",
-    shce     : "text/shaclc-ext",
-    shaclce  : "text/shaclc-ext",
-    trig     : "application/trig",
-    jsonld   : "application/ld+json",
-    json     : "application/ld+json",
+export class RdfSerializer {
+  // eslint-disable-next-line ts/naming-convention
+  public static readonly CONTENT_MAPPINGS: Record<string, string> = {
+    ttl: 'text/turtle',
+    turtle: 'text/turtle',
+    nt: 'application/n-triples',
+    ntriples: 'application/n-triples',
+    nq: 'application/n-quads',
+    nquads: 'application/n-quads',
+    n3: 'text/n3',
+    shc: 'text/shaclc',
+    shaclc: 'text/shaclc',
+    shce: 'text/shaclc-ext',
+    shaclce: 'text/shaclc-ext',
+    trig: 'application/trig',
+    jsonld: 'application/ld+json',
+    json: 'application/ld+json',
   };
 
   public readonly mediatorRdfSerializeMediatypes: MediatorRdfSerializeMediaTypes;
   public readonly mediatorRdfSerializeHandle: MediatorRdfSerializeHandle;
 
-  constructor(args: IRdfSerializerArgs) {
+  public constructor(args: IRdfSerializerArgs) {
     this.mediatorRdfSerializeMediatypes = args.mediatorRdfSerializeMediatypes;
     this.mediatorRdfSerializeHandle = args.mediatorRdfSerializeHandle;
   }
@@ -50,9 +50,10 @@ export class RdfSerializer<Q extends RDF.BaseQuad = RDF.Quad>  {
    * Get a hash of all available content types for this serializer, mapped to a numerical priority.
    * @return {Promise<{[p: string]: number}>} A promise resolving to a hash mapping content type to a priority number.
    */
-  public async getContentTypesPrioritized(): Promise<{[contentType: string]: number}> {
+  public async getContentTypesPrioritized(): Promise<Record<string, number>> {
     return (await this.mediatorRdfSerializeMediatypes.mediate(
-      { context: new ActionContext(), mediaTypes: true })).mediaTypes;
+      { context: new ActionContext(), mediaTypes: true },
+    )).mediaTypes;
   }
 
   /**
@@ -79,7 +80,7 @@ export class RdfSerializer<Q extends RDF.BaseQuad = RDF.Quad>  {
 
     // Delegate serializing to the mediator
     const context = new ActionContext(options)
-        .setDefault(KeysRdfSerialize.rdfSerializationPrefixes, options.prefixes);
+      .setDefault(KeysRdfSerialize.rdfSerializationPrefixes, options.prefixes);
     this.mediatorRdfSerializeHandle.mediate({
       context,
       handle: { quadStream: stream, context },
@@ -87,10 +88,10 @@ export class RdfSerializer<Q extends RDF.BaseQuad = RDF.Quad>  {
     })
       .then((output) => {
         const data: NodeJS.ReadableStream = output.handle.data;
-        data.on('error', (e) => readable.emit('error', e));
+        data.on('error', e => readable.emit('error', e));
         data.pipe(readable);
       })
-      .catch((e) => readable.emit('error', e));
+      .catch(e => readable.emit('error', e));
 
     return readable;
   }
@@ -104,13 +105,12 @@ export class RdfSerializer<Q extends RDF.BaseQuad = RDF.Quad>  {
   public getContentTypeFromExtension(path: string): string {
     const dotIndex = path.lastIndexOf('.');
     if (dotIndex >= 0) {
-      const ext = path.substr(dotIndex);
-      // ignore dot
-      return RdfSerializer.CONTENT_MAPPINGS[ext.substring(1)] || '';
+      const ext = path.slice(dotIndex);
+      // Ignore dot
+      return RdfSerializer.CONTENT_MAPPINGS[ext.slice(1)] || '';
     }
     return '';
   }
-
 }
 
 export interface IRdfSerializerArgs {
@@ -136,4 +136,4 @@ export type SerializeOptionsCommon = {
    * A record of prefixes to use during serialization.
    */
   prefixes?: Record<string, string>;
-}
+};
