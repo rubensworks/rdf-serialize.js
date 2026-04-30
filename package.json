@@ -94,7 +94,7 @@
     "eslint": "^8.56.0",
     "jest": "^30.2.0",
     "manual-git-changelog": "^1.0.1",
-    "pre-commit": "^1.2.2",
+    "pre-commit": "^2.0.0",
     "rdf-data-factory": "^2.0.2",
     "rdf-parse": "^5.0.0",
     "rdf-quad": "^2.0.0",
