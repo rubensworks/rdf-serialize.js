@@ -1,9 +1,9 @@
+import { streamifyArray } from 'streamify-array';
 import { rdfSerializer } from '..';
 import { RdfSerializer } from '../lib/RdfSerializer';
 
 const quad = require('rdf-quad');
 const stringifyStream = require('stream-to-string');
-const streamifyArray = require('streamify-array');
 
 describe('serializer', () => {
   it('should be an RdfSerializer instance', () => {
