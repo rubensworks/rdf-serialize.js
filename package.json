@@ -102,6 +102,6 @@
     "stream-to-string": "^1.1.0",
     "streamify-array": "^2.0.0",
     "ts-jest": "^29.4.6",
-    "typescript": "^6.0.0"
+    "typescript": "^7.0.0"
   }
 }
